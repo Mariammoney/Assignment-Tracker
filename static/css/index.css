@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+.landing-page {
+  min-height: 100vh;
+  margin: 0;
+  background: #f5f8fc;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+.landing-card {
+  width: min(100%, 560px);
+  padding: 48px 36px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 5px 25px rgba(30, 64, 175, 0.09);
+  text-align: center;
+}
+
+.landing-title {
+  margin: 0 0 12px;
+  color: #2457a6;
+  font-size: clamp(28px, 6vw, 40px);
+}
+
+.landing-text {
+  margin: 0 0 28px;
+  color: #687386;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.landing-link {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: #2457a6;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.landing-link:hover {
+  background: #1c4485;
+}

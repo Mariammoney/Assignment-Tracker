@@ -1,0 +1,144 @@
+.signup-page {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f5f8fc;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+.signup-main {
+  width: 90%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.signup-card {
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(30, 64, 175, 0.09);
+}
+
+.signup-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.signup-title {
+  margin: 0 0 10px;
+  color: #2457a6;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.signup-subtitle {
+  margin: 0;
+  color: #687386;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  color: #172033;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d7deea;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #172033;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #2457a6;
+  box-shadow: 0 0 0 3px rgba(36, 87, 166, 0.1);
+}
+
+.signup-action {
+  margin-top: 5px;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2457a6;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.signup-button:hover {
+  background-color: #1c4485;
+  transform: translateY(-2px);
+}
+
+.signup-footer {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.footer-text {
+  display: inline;
+  margin: 0;
+  color: #687386;
+  font-size: 14px;
+}
+
+.login-link {
+  margin-left: 5px;
+  color: #2457a6;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-link:hover {
+  color: #1c4485;
+  text-decoration: underline;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 500px) {
+  .signup-main {
+    width: 94%;
+    padding: 35px 0;
+  }
+
+  .signup-card {
+    padding: 28px 20px;
+  }
+
+  .signup-title {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,208 @@
+.assignment-detail-page {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f5f8fc;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+.assignment-detail-main {
+  width: 90%;
+  max-width: 750px;
+  margin: 60px auto;
+}
+
+.assignment-detail-card {
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(30, 64, 175, 0.09);
+}
+
+.detail-header {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e3e8f0;
+}
+
+.detail-label-top {
+  color: #2457a6;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.detail-title {
+  margin: 10px 0 0;
+  color: #172033;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 28px 0;
+}
+
+.detail-item {
+  padding: 18px;
+  border-radius: 10px;
+  background-color: #f7f9fc;
+}
+
+.detail-heading {
+  display: block;
+  margin-bottom: 7px;
+  color: #2457a6;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.detail-value {
+  margin: 0;
+  color: #4f5c70;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.detail-status {
+  color: #2457a6;
+  font-weight: 700;
+}
+
+.detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-top: 5px;
+}
+
+.edit-detail-button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #2457a6;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.edit-detail-button:hover {
+  background-color: #1c4485;
+  transform: translateY(-2px);
+}
+.delete-form {
+  margin: 0;
+}
+
+.delete-detail-button {
+  padding: 12px 20px;
+  border: 1px solid #c94b4b;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #c94b4b;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.delete-detail-button:hover {
+  background-color: #c94b4b;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+.back-detail-button {
+  padding: 11px 19px;
+  border: 1px solid #2457a6;
+  border-radius: 8px;
+  color: #2457a6;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.back-detail-button:hover {
+  background-color: #2457a6;
+  color: #ffffff;
+}
+
+.due-date-text {
+  color: #687386;
+  font-weight: 500;
+}
+
+.due-date-text.overdue {
+  color: #c94b4b;
+  font-weight: 700;
+}
+
+
+
+/* Automatic Deadline Status */
+.deadline-status {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.deadline-due-today {
+    background-color: #fff1cc;
+    color: #8a5a00;
+}
+
+.deadline-overdue {
+    background-color: #fde8e7;
+    color: #b42318;
+}
+
+.deadline-completed {
+    background-color: #e5f6ec;
+    color: #187443;
+}
+
+.deadline-upcoming {
+    background-color: #eaf0fc;
+    color: #3159a6;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+  .assignment-detail-main {
+    width: 94%;
+    margin: 30px auto;
+  }
+
+  .assignment-detail-card {
+    padding: 25px 20px;
+  }
+
+  .detail-title {
+    font-size: 25px;
+  }
+
+  .detail-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+ .edit-detail-button,
+.delete-detail-button,
+.back-detail-button {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}

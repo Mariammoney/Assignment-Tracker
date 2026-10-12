@@ -1,0 +1,20 @@
+@import url("index.css");
+@import url("navbar.css");
+@import url("herosection.css");
+@import url("features.css");
+@import url("how_it_works.css");
+@import url("benefits.css");
+@import url("call_to_action.css");
+@import url("footer.css");
+
+* {
+  box-sizing: border-box;
+}
+
+.base-page {
+  min-height: 100vh;
+  margin: 0;
+  background: #f5f8fc;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}

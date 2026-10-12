@@ -1,0 +1,133 @@
+
+/* How It Works Section */
+.how-it-works-section {
+    padding: 90px 7%;
+    background-color: #f5f8fc;
+}
+
+.how-it-works-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section Heading */
+.how-it-works-heading {
+    max-width: 720px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.how-it-works-label {
+    margin: 0 0 14px;
+    color: #4263a8;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.how-it-works-title {
+    margin: 0 0 18px;
+    color: #172b4d;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.how-it-works-description {
+    margin: 0;
+    color: #5d6b82;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Steps Grid */
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* Step Cards */
+.step-card {
+    padding: 32px 26px;
+    border: 1px solid #e2e9f3;
+    border-radius: 14px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 20px rgba(30, 64, 175, 0.04);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(30, 64, 175, 0.09);
+}
+
+/* Step Number */
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    background-color: #eaf0fc;
+    color: #3159a6;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Step Titles */
+.step-title {
+    margin: 0 0 14px;
+    color: #172b4d;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Step Text */
+.step-text {
+    margin: 0;
+    color: #68768b;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .how-it-works-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .step-card:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .how-it-works-section {
+        padding: 65px 20px;
+    }
+
+    .how-it-works-heading {
+        margin-bottom: 35px;
+    }
+
+    .how-it-works-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .step-card:last-child {
+        grid-column: auto;
+    }
+
+    .step-card {
+        padding: 26px 22px;
+    }
+}

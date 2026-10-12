@@ -1,0 +1,397 @@
+.dashboard-page {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f5f8fc;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header {
+  width: 90%;
+  max-width: 1200px;
+  margin: 25px auto 0;
+  padding: 18px 25px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 18px rgba(30, 64, 175, 0.08);
+  box-sizing: border-box;
+}
+
+.brand-title {
+  margin: 0;
+  color: #2457a6;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.welcome-user {
+  color: #596579;
+  font-size: 15px;
+}
+
+.logout-link {
+  padding: 9px 17px;
+  border-radius: 8px;
+  background-color: #2457a6;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.logout-link:hover {
+  background-color: #1c4485;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.dashboard-main {
+  width: 90%;
+  max-width: 1200px;
+  margin: 35px auto 60px;
+}
+
+
+/* =========================
+   WELCOME SECTION
+========================= */
+
+.welcome-section {
+  padding: 35px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  box-shadow: 0 5px 20px rgba(30, 64, 175, 0.08);
+}
+
+.welcome-title {
+  margin: 0 0 10px;
+  color: #172033;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.welcome-text {
+  margin: 0;
+  color: #687386;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.add-assignment-button {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 9px;
+  background-color: #2457a6;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.add-assignment-button:hover {
+  background-color: #1c4485;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats-section {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stat-card {
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  border-left: 4px solid #2457a6;
+  box-shadow: 0 4px 18px rgba(30, 64, 175, 0.07);
+}
+
+.stat-title {
+  margin: 0 0 12px;
+  color: #687386;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.stat-number {
+  margin: 0;
+  color: #2457a6;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   ASSIGNMENTS SECTION
+========================= */
+
+.assignments-section {
+  margin-top: 35px;
+}
+
+.assignments-heading {
+  margin-bottom: 20px;
+}
+
+.assignments-title {
+  margin: 0;
+  color: #172033;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.assignments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.assignment-card {
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(30, 64, 175, 0.07);
+  transition: 0.3s ease;
+}
+
+.assignment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(30, 64, 175, 0.12);
+}
+
+.assignment-title {
+  margin: 0 0 18px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.assignment-title-link {
+  color: #2457a6;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.assignment-title-link:hover {
+  color: #1c4485;
+}
+
+.assignment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.assignment-detail {
+  margin: 0;
+  color: #687386;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.detail-label {
+  color: #172033;
+  font-weight: 600;
+}
+.status-text {
+  font-weight: 600;
+}
+
+.pending-status {
+  color: #c98a24;
+}
+
+.completed-status {
+  color: #3f8f63;
+}
+
+.overdue-status {
+  color: #c94b4b;
+}
+
+.deadline-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.deadline-due-today {
+  background-color: #fff1cc;
+  color: #8a5a00;
+}
+
+.deadline-overdue {
+  background-color: #fde8e7;
+  color: #b42318;
+}
+
+.deadline-completed {
+  background-color: #e5f6ec;
+  color: #187443;
+}
+
+.deadline-upcoming {
+  background-color: #eaf0fc;
+  color: #3159a6;
+}
+
+.assignment-actions {
+  margin-top: 20px;
+}
+
+.edit-button {
+  display: inline-block;
+  padding: 9px 17px;
+  border: 1px solid #2457a6;
+  border-radius: 8px;
+  color: #2457a6;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.edit-button:hover {
+  background-color: #2457a6;
+  color: #ffffff;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+  padding: 50px 30px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(30, 64, 175, 0.07);
+}
+
+.empty-title {
+  margin: 0 0 10px;
+  color: #172033;
+  font-size: 21px;
+}
+
+.empty-text {
+  max-width: 500px;
+  margin: 0 auto 25px;
+  color: #687386;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.empty-add-button {
+  display: inline-block;
+  padding: 12px 21px;
+  border-radius: 9px;
+  background-color: #2457a6;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.empty-add-button:hover {
+  background-color: #1c4485;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+  .assignments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .welcome-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .dashboard-header {
+    width: 94%;
+    padding: 16px;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .header-nav {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dashboard-main {
+    width: 94%;
+    margin-top: 25px;
+  }
+
+  .welcome-section {
+    padding: 25px;
+  }
+
+  .welcome-title {
+    font-size: 24px;
+  }
+
+  .stats-section {
+    grid-template-columns: 1fr;
+  }
+
+  .assignments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .add-assignment-button {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}

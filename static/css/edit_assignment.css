@@ -1,0 +1,157 @@
+.edit-assignment-page {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f5f8fc;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+.edit-assignment-main {
+  width: 90%;
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+.edit-form-container {
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(30, 64, 175, 0.09);
+}
+
+.edit-form-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.edit-form-title {
+  margin: 0 0 10px;
+  color: #2457a6;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.edit-form-subtitle {
+  margin: 0;
+  color: #687386;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.edit-assignment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  color: #172033;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d7deea;
+  border-radius: 8px;
+  background-color: #ffffff;
+  color: #172033;
+  font-size: 14px;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: #2457a6;
+  box-shadow: 0 0 0 3px rgba(36, 87, 166, 0.1);
+}
+
+.form-textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.update-button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2457a6;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.update-button:hover {
+  background-color: #1c4485;
+  transform: translateY(-2px);
+}
+
+.back-button {
+  padding: 11px 20px;
+  border: 1px solid #2457a6;
+  border-radius: 8px;
+  color: #2457a6;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #2457a6;
+  color: #ffffff;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 600px) {
+  .edit-assignment-main {
+    width: 94%;
+    margin: 30px auto;
+  }
+
+  .edit-form-container {
+    padding: 25px 20px;
+  }
+
+  .edit-form-title {
+    font-size: 25px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .update-button,
+  .back-button {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}

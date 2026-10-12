@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Assignment Tracker</title>
+
+    <meta
+      name="description"
+      content="Keep track of your assignments, organise your coursework, and stay on top of deadlines with Assignment Tracker."
+    />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+  </head>
+
+  <body class="landing-page">
+    <!-- Navigation Bar -->
+    {% include 'components/navbar.html' %}
+
+    <main>
+      <!-- Hero Section -->
+      {% include 'components/herosection.html' %}
+
+      <!-- Features Section -->
+      {% include 'components/features.html' %}
+
+      <!-- How It Works Section -->
+      {% include 'components/how_it_works.html' %}
+
+      <!-- Benefits Section -->
+      {% include 'components/benefits.html' %}
+
+      <!-- Call To Action Section -->
+      {% include 'components/call_to_action.html' %}
+    </main>
+
+    <!-- Footer -->
+    {% include 'components/footer.html' %}
+  </body>
+</html>

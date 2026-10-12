@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Admin Dashboard - Assignment Tracker</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/admin.css') }}"
+    />
+  </head>
+
+  <body class="admin-page">
+    <main class="admin-main">
+      <section class="admin-header">
+        <div class="admin-heading">
+          <h1 class="admin-title">Admin Dashboard</h1>
+
+          <p class="admin-subtitle">Manage users and monitor assignments.</p>
+        </div>
+
+        <a class="admin-logout" href="{{ url_for('auth.logout') }}"> Logout </a>
+      </section>
+
+      <!-- Statistics -->
+
+      <section class="admin-stats">
+        <div class="admin-stat-card">
+          <h2 class="admin-stat-title">Total Users</h2>
+
+          <p class="admin-stat-number">{{ total_users }}</p>
+        </div>
+
+        <div class="admin-stat-card">
+          <h2 class="admin-stat-title">Total Assignments</h2>
+
+          <p class="admin-stat-number">{{ total_assignments }}</p>
+        </div>
+
+        <div class="admin-stat-card">
+          <h2 class="admin-stat-title">Pending</h2>
+
+          <p class="admin-stat-number">{{ pending_assignments }}</p>
+        </div>
+
+        <div class="admin-stat-card">
+          <h2 class="admin-stat-title">Completed</h2>
+
+          <p class="admin-stat-number">{{ completed_assignments }}</p>
+        </div>
+      </section>
+
+      <!-- Users -->
+
+      <section class="admin-section">
+        <div class="admin-section-header">
+          <h2 class="admin-section-title">Registered Users</h2>
+        </div>
+
+        <div class="users-list">
+          {% for user in users %}
+
+          <div class="user-card">
+            <div class="user-info">
+              <h3 class="user-name">{{ user.name }}</h3>
+
+              <p class="user-email">{{ user.email }}</p>
+            </div>
+
+            <span class="user-role">
+              {% if user.is_admin %} Admin {% else %} User {% endif %}
+            </span>
+          </div>
+
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Assignments -->
+
+      <section class="admin-section">
+        <div class="admin-section-header">
+          <h2 class="admin-section-title">All Assignments</h2>
+        </div>
+
+        <div class="assignments-list">
+          {% for assignment in assignments %}
+
+          <div class="admin-assignment-card">
+            <div class="admin-assignment-info">
+              <h3 class="admin-assignment-title">{{ assignment.title }}</h3>
+
+              <p class="admin-assignment-course">
+                Course: {{ assignment.course }}
+              </p>
+
+              <p class="admin-assignment-user">
+                Assigned to: {{ assignment.user.name }}
+              </p>
+            </div>
+
+            <span class="admin-assignment-status">
+              {{ assignment.status }}
+            </span>
+          </div>
+
+          {% endfor %}
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

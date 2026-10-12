@@ -1,0 +1,48 @@
+<footer class="footer-section">
+  <div class="footer-container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="{{ url_for('main.landing') }}" class="footer-logo">
+          Assignment Tracker<span class="footer-logo-dot">.</span>
+        </a>
+
+        <p class="footer-description">
+          A simpler way to organise your assignments, manage deadlines, and keep
+          track of your academic progress.
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-heading">Quick Links</h3>
+
+        <a href="{{ url_for('main.landing') }}" class="footer-link"> Home </a>
+
+        <a href="#features" class="footer-link"> Features </a>
+
+        <a href="#how-it-works" class="footer-link"> How It Works </a>
+
+        <a href="{{ url_for('auth.login') }}" class="footer-link">
+          Get Started
+        </a>
+      </div>
+
+      <div class="footer-links-group">
+        <h3 class="footer-heading">Your Account</h3>
+
+        <a href="{{ url_for('auth.login') }}" class="footer-link"> Log In </a>
+
+        <a href="{{ url_for('auth.signup') }}" class="footer-link">
+          Create Account
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        © 2026 Assignment Tracker. All rights reserved.
+      </p>
+
+      <a href="#top" class="footer-back-to-top"> Back to top ↑ </a>
+    </div>
+  </div>
+</footer>

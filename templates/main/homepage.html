@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard - Assignment Tracker</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/homepage.css') }}"
+    />
+  </head>
+
+  <body class="dashboard-page">
+    <header class="dashboard-header">
+      <div>
+        <h1 class="brand-title">Assignment Tracker</h1>
+      </div>
+
+      <nav class="header-nav">
+        <span class="welcome-user">Welcome, {{ user.name }}</span>
+        <a class="logout-link" href="{{ url_for('auth.logout') }}">Logout</a>
+      </nav>
+    </header>
+
+    <main class="dashboard-main">
+      <section class="welcome-section">
+        <div>
+          <h2 class="welcome-title">Welcome back, {{ user.name }}!</h2>
+          <p class="welcome-text">
+            Keep track of your assignments and stay organized.
+          </p>
+        </div>
+
+        <div>
+          <a
+            class="add-assignment-button"
+            href="{{ url_for('main.add_assignment') }}"
+          >
+            + Add Assignment
+          </a>
+        </div>
+      </section>
+
+      <section class="stats-section" aria-label="Assignment statistics">
+        <div class="stat-card">
+          <h3 class="stat-title">Total Assignments</h3>
+          <p class="stat-number">{{ total_assignments }}</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 class="stat-title">Pending</h3>
+          <p class="stat-number">{{ pending_assignments }}</p>
+        </div>
+
+        <div class="stat-card">
+          <h3 class="stat-title">Completed</h3>
+          <p class="stat-number">{{ completed_assignments }}</p>
+        </div>
+      </section>
+
+      <section class="assignments-section">
+        <div class="assignments-heading">
+          <h2 class="assignments-title">Your Assignments</h2>
+        </div>
+
+        {% if assignments %}
+        <div class="assignments-grid">
+          {% for assignment in assignments %}
+          <article class="assignment-card">
+            <h3 class="assignment-title">
+              <a
+                class="assignment-title-link"
+                href="{{ url_for('main.assignment_detail', assignment_id=assignment.id) }}"
+              >
+                {{ assignment.title }}
+              </a>
+            </h3>
+
+            <div class="assignment-info">
+              <p class="assignment-detail">
+                <strong class="detail-label">Course:</strong>
+                {{ assignment.course }}
+              </p>
+              <p class="assignment-detail">
+                <span class="detail-label">Assignment Status:</span>
+                <span class="status-text {{ 'completed-status' if assignment.status and assignment.status|lower == 'completed' else 'pending-status' }}">
+                  {{ assignment.status }}
+                </span>
+              </p>
+              <p class="assignment-detail">
+                <span class="detail-label">Deadline Status:</span>
+                <span class="deadline-status deadline-{{ assignment.deadline_status|lower|replace(' ', '-') }}">
+                  {{ assignment.deadline_status }}
+                </span>
+              </p>
+            </div>
+
+            <div class="assignment-actions">
+              <a
+                class="edit-button"
+                href="{{ url_for('main.edit_assignment', assignment_id=assignment.id) }}"
+              >
+                Edit
+              </a>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="empty-state">
+          <h3 class="empty-title">No assignments yet</h3>
+          <p class="empty-text">
+            You don't have any assignments yet. Add your first assignment to get
+            started.
+          </p>
+          <a
+            class="empty-add-button"
+            href="{{ url_for('main.add_assignment') }}"
+          >
+            + Add Assignment
+          </a>
+        </div>
+        {% endif %}
+      </section>
+    </main>
+  </body>
+</html>
