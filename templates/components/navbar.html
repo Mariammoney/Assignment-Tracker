@@ -1,4 +1,6 @@
+
 <nav class="navbar">
+
   <a href="{{ url_for('main.landing') }}" class="navbar-brand">
     <img
       src="{{ url_for('static', filename='images/Assignment-Tracker-logo.png') }}"
@@ -6,15 +8,57 @@
       class="navbar-logo"
     />
 
-    <span class="navbar-brand-text"> Assignment Tracker </span>
+    <span class="navbar-brand-text">Assignment Tracker</span>
   </a>
 
-  <div class="navbar-links">
+  <button
+    type="button"
+    class="hamburger"
+    id="hamburger"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+    aria-controls="navbar-links"
+  >
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="navbar-links" id="navbar-links">
     <a href="#features" class="navbar-link">Features</a>
+
     <a href="#how-it-works" class="navbar-link">How It Works</a>
 
     <a href="{{ url_for('auth.login') }}" class="navbar-button">
       Get Started
     </a>
   </div>
+
 </nav>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const navbarLinks = document.getElementById("navbar-links");
+
+  hamburger.addEventListener("click", function () {
+    const isOpen = navbarLinks.classList.toggle("active");
+
+    hamburger.classList.toggle("active", isOpen);
+
+    hamburger.setAttribute("aria-expanded", isOpen);
+
+    hamburger.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+  });
+
+  navbarLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navbarLinks.classList.remove("active");
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+      hamburger.setAttribute("aria-label", "Open navigation menu");
+    });
+  });
+</script>

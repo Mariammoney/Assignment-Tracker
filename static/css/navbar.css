@@ -1,135 +1,247 @@
 
-/* Navbar */
+/* =========================
+   NAVBAR
+========================= */
+
 .navbar {
+    position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: 24px;
     width: 100%;
-    padding: 20px 7%;
+    padding: 18px 7%;
     background-color: #ffffff;
-    border-bottom: 1px solid #edf0f5;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
-/* Navbar Logo */
+/* =========================
+   NAVBAR BRAND
+========================= */
 
-
-/* Logo and Brand Name */
 .navbar-brand {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 10px;
-    color: #172b4d;
-    font-size: 19px;
-    font-weight: 700;
+    flex-shrink: 0;
     text-decoration: none;
-    white-space: nowrap;
 }
 
 .navbar-logo {
-    color: #2457a6;
-    font-size: 22px;
-    font-weight: 700;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: color 0.3s ease;
     display: block;
     width: 42px;
     height: 42px;
     object-fit: contain;
 }
 
-.navbar-logo:hover {
-    color: #1c4485;
-}
-
 .navbar-brand-text {
-    display: inline-block;
+    color: #234a7c;
+    font-size: 20px;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
+/* =========================
+   DESKTOP NAVIGATION LINKS
+========================= */
 
-
-
-
-
-/* Navbar Links Container */
 .navbar-links {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    justify-content: flex-end;
     gap: 28px;
 }
 
-/* Regular Navigation Links */
 .navbar-link {
-    color: #4f5d73;
-    font-size: 14px;
-    font-weight: 600;
+    color: #334155;
+    font-size: 15px;
+    font-weight: 500;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 .navbar-link:hover {
-    color: #2457a6;
+    color: #2563eb;
 }
 
-/* Get Started Button */
+/* =========================
+   GET STARTED BUTTON
+========================= */
+
 .navbar-button {
     display: inline-flex;
-    justify-content: center;
     align-items: center;
-    min-height: 44px;
-    padding: 0 20px;
-    border: 1px solid #2457a6;
+    justify-content: center;
+    padding: 11px 22px;
+    border: 1px solid #234a7c;
     border-radius: 8px;
-    background-color: #2457a6;
+    background-color: #234a7c;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
     text-decoration: none;
+    white-space: nowrap;
     transition:
-        background-color 0.3s ease,
-        border-color 0.3s ease;
+        background-color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .navbar-button:hover {
-    background-color: #1c4485;
-    border-color: #1c4485;
+    background-color: #19385f;
+    border-color: #19385f;
 }
 
-/* Responsive Navbar */
-@media (max-width: 700px) {
+/* =========================
+   HAMBURGER BUTTON
+   HIDDEN ON DESKTOP
+========================= */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    border: 1px solid #dce4ef;
+    border-radius: 8px;
+    background-color: #ffffff;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #234a7c;
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+/* =========================
+   HAMBURGER ANIMATION
+========================= */
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =========================
+   TABLETS AND MOBILE
+========================= */
+
+@media (max-width: 768px) {
     .navbar {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 18px;
-        padding: 20px 5%;
+        padding: 14px 5%;
+        gap: 12px;
     }
 
-    .navbar-links {
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 18px;
-        width: 100%;
+    .navbar-brand {
+        gap: 8px;
+        min-width: 0;
     }
 
     .navbar-logo {
-        font-size: 20px;
+        width: 35px;
+        height: 35px;
     }
-}
 
-@media (max-width: 400px) {
+    .navbar-brand-text {
+        font-size: 16px;
+    }
+
+    /* Show the hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Hide links until the hamburger is clicked */
     .navbar-links {
-        gap: 14px;
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        padding: 12px 5% 20px;
+        background-color: #ffffff;
+        border-top: 1px solid #edf0f5;
+        box-shadow: 0 8px 16px rgba(15, 23, 42, 0.08);
+        box-sizing: border-box;
+    }
+
+    /* Display menu when JavaScript adds active */
+    .navbar-links.active {
+        display: flex;
     }
 
     .navbar-link {
-        font-size: 13px;
+        display: block;
+        width: 100%;
+        padding: 13px 4px;
+        box-sizing: border-box;
     }
 
     .navbar-button {
-        min-height: 40px;
-        padding: 0 14px;
-        font-size: 13px;
+        align-self: flex-start;
+        margin-top: 10px;
+    }
+}
+
+/* =========================
+   EXTRA SMALL SCREENS
+========================= */
+
+@media (max-width: 360px) {
+    .navbar {
+        padding: 12px 4%;
+        gap: 8px;
+    }
+
+    .navbar-brand {
+        gap: 6px;
+    }
+
+    .navbar-logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navbar-brand-text {
+        font-size: 14px;
+    }
+
+    .hamburger {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .navbar-link,
+    .navbar-button,
+    .hamburger span {
+        transition: none;
     }
 }
